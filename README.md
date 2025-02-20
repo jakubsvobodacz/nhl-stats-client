@@ -22,10 +22,10 @@ const nhlStats = require('nhl-stats-client');
 ### getPlayer(id)
 Retrieves detailed information about a specific NHL player.
 
-- **Parameters**:
-  - `id` {number} - The player's NHL ID
-- **Returns**: Promise<Object> containing all available player information
-- **Example**:
+**Parameters**: 
+`id` {number} - The player's NHL ID
+**Returns**: Promise<Object> containing all available player information
+**Example**:
 
 ```javascript
 const playerInfo = await nhlStats.getPlayer(8478402);
@@ -34,24 +34,24 @@ const playerInfo = await nhlStats.getPlayer(8478402);
 ### getPlayerGameLog(id, season, gameType)
 Retrieves a player's game log for a specific season and game type.
 
-- **Parameters**:
-  - `id` {number} - The player's NHL ID
-  - `season` {number} - Season year in YYYYYYYY format (e.g., 20242025)
-  - `gameType` {number} - Game type (2 for regular season, 3 for playoffs)
-- **Returns**: Promise<Object> containing the player's game log data
-- **Example**:
+**Parameters**:
+`id` {number} - The player's NHL ID
+`season` {number} - Season year in YYYYYYYY format (e.g., 20242025)
+`gameType` {number} - Game type (2 for regular season, 3 for playoffs)
+**Returns**: Promise<Object> containing the player's game log data
+**Example**:
 
-```javascript
-const gameLog = await nhlStats.getPlayerGameLog(8478402, 20232024, 2);
+```javascript 
+    const gameLog = await nhlStats.getPlayerGameLog(8478402, 20232024, 2); 
 ```
 
 ### getPlayerGameLogNow(id)
 Retrieves a player's current game log (for games in progress).
 
-- **Parameters**:
-  - `id` {number} - The player's NHL ID
-- **Returns**: Promise<Object> containing the player's current game data
-- **Example**:
+**Parameters**:
+`id` {number} - The player's NHL ID
+**Returns**: Promise<Object> containing the player's current game data
+**Example**:
 
 ```javascript
 const currentGame = await nhlStats.getPlayerGameLogNow(8478402);
@@ -68,3 +68,4 @@ Feel free to open issues or submit pull requests for any improvements or bug fix
 
 ## License
 MIT
+
