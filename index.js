@@ -37,8 +37,8 @@ const makeRequest = async ({ query = '', caynneExp = '', extraUrlParams = {} }) 
 
 /**
  * This method will return a specific player information based on the player id
- * @param {*} id 
- * @returns all player information
+ * @param {number} id the player id
+ * @returns all available player information
  */
 const getPlayer = async (id) => {
     const playerId = id;
@@ -46,6 +46,33 @@ const getPlayer = async (id) => {
     const data = await makeRequest({extraUrlParams: { url }});
     return data;
 }
+/**
+ * This method will return a specific player game log based on the player id, season, and game type
+ * @param {number} id the player id
+ * @param {number} season the season year, format YYYYYYYY meaning the season year is 20242025 without hyphens or spaces
+ * @param {number} gameType the game type (2 for regular season, 3 for playoffs)
+ * @returns {Promise<Object>} The api response data
+ */
+const getPlayerGameLog = async (id, season, gameType) => {
+    const playerId = id;
+    const url = `/player/${playerId}/game-log/${season}/${gameType}`;
+    const data = await makeRequest({extraUrlParams: { url }});
+    return data;
+}
+
+/**
+ * This method will return a specific player game log that is happening right now based on the player id
+ * @param {number} id the player id
+ * @returns {Promise<Object>} The api response data
+ */
+const getPlayerGameLogNow = async (id) => {
+    const playerId = id;
+    const url = `/player/${playerId}/game-log/now`;
+    const data = await makeRequest({extraUrlParams: { url }});
+    return data;
+}
+
+
 
 //TESTING
 const main = async (func, ...args) => {
@@ -53,9 +80,14 @@ const main = async (func, ...args) => {
     console.log(result);
 } 
 
-main(getPlayer, 8478402);
+main(getPlayerGameLogNow, 8478402);
 
 
-
+//EXPORT
+module.exports = {
+    getPlayer,
+    getPlayerGameLog,
+    getPlayerGameLogNow
+}
 
 
