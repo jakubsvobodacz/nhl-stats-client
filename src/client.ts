@@ -1,4 +1,5 @@
 import { WebApiClient, WebApiClientConfig } from './web/web-client.js';
+import { StatsApiClient, StatsApiClientConfig } from './stats/stats-client.js';
 import { PlayersEndpoints } from './web/players.js';
 import { StandingsEndpoints } from './web/standings.js';
 import { ScoresEndpoints } from './web/scores.js';
@@ -11,10 +12,13 @@ import { PlayoffsEndpoints } from './web/playoffs.js';
 import { NetworkEndpoints } from './web/network.js';
 import { MetaEndpoints } from './web/meta.js';
 
-export interface NHLClientConfig extends WebApiClientConfig {}
+export interface NHLClientConfig extends WebApiClientConfig {
+  stats?: StatsApiClientConfig;
+}
 
 export class NHLClient {
   public readonly web: WebApiClient;
+  public readonly stats: StatsApiClient;
   public readonly players: PlayersEndpoints;
   public readonly standings: StandingsEndpoints;
   public readonly scores: ScoresEndpoints;
@@ -29,6 +33,7 @@ export class NHLClient {
 
   constructor(config?: NHLClientConfig) {
     this.web = new WebApiClient(config);
+    this.stats = new StatsApiClient(config?.stats);
     this.players = this.web.players;
     this.standings = this.web.standings;
     this.scores = this.web.scores;

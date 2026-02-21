@@ -8,3 +8,4 @@ export * from './leaders.js';
 export * from './draft.js';
 export * from './playoffs.js';
 export * from './edge.js';
+export * from './stats-api.js';
