@@ -6,6 +6,10 @@ import { TeamsEndpoints } from './web/teams.js';
 import { ScheduleEndpoints } from './web/schedule.js';
 import { GamesEndpoints } from './web/games.js';
 import { LeadersEndpoints } from './web/leaders.js';
+import { DraftEndpoints } from './web/draft.js';
+import { PlayoffsEndpoints } from './web/playoffs.js';
+import { NetworkEndpoints } from './web/network.js';
+import { MetaEndpoints } from './web/meta.js';
 
 export interface NHLClientConfig extends WebApiClientConfig {}
 
@@ -18,6 +22,10 @@ export class NHLClient {
   public readonly schedule: ScheduleEndpoints;
   public readonly games: GamesEndpoints;
   public readonly leaders: LeadersEndpoints;
+  public readonly draft: DraftEndpoints;
+  public readonly playoffs: PlayoffsEndpoints;
+  public readonly network: NetworkEndpoints;
+  public readonly meta: MetaEndpoints;
 
   constructor(config?: NHLClientConfig) {
     this.web = new WebApiClient(config);
@@ -28,5 +36,9 @@ export class NHLClient {
     this.schedule = this.web.schedule;
     this.games = this.web.games;
     this.leaders = this.web.leaders;
+    this.draft = this.web.draft;
+    this.playoffs = this.web.playoffs;
+    this.network = this.web.network;
+    this.meta = this.web.meta;
   }
 }

@@ -5,3 +5,6 @@ export * from './schedule.js';
 export * from './game.js';
 export * from './team.js';
 export * from './leaders.js';
+export * from './draft.js';
+export * from './playoffs.js';
+export * from './edge.js';
