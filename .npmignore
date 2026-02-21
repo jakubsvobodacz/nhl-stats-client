@@ -1,0 +1,9 @@
+src/
+tests/
+tsconfig.json
+tsup.config.ts
+vitest.config.ts
+vitest.integration.config.ts
+.github/
+.git/
+*.tsbuildinfo
