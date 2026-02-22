@@ -1,5 +1,5 @@
 {
-  "name": "nhl-stats-client",
+  "name": "nhl-api-client",
   "version": "2.0.0",
   "description": "Comprehensive TypeScript client for both NHL APIs (Web API + Stats API) - standings, scores, players, teams, games, NHL Edge analytics, and more",
   "main": "./dist/index.cjs",
@@ -31,7 +31,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jakubsvobodacz/nhl-stats-client.git"
+    "url": "git+https://github.com/jakubsvobodacz/nhl-api-client.git"
   },
   "keywords": [
     "nhl",
@@ -48,9 +48,9 @@
   "author": "Jakub Svoboda",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jakubsvobodacz/nhl-stats-client/issues"
+    "url": "https://github.com/jakubsvobodacz/nhl-api-client/issues"
   },
-  "homepage": "https://github.com/jakubsvobodacz/nhl-stats-client#readme",
+  "homepage": "https://github.com/jakubsvobodacz/nhl-api-client#readme",
   "dependencies": {
     "axios": "^1.7.9"
   },

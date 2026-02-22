@@ -1,4 +1,4 @@
-# NHL Stats Client
+# NHL API Client
 
 A comprehensive TypeScript client for both NHL APIs. Covers standings, scores, players, teams, games, NHL Edge analytics, shift charts, and more.
 
@@ -14,13 +14,13 @@ A comprehensive TypeScript client for both NHL APIs. Covers standings, scores, p
 ## Installation
 
 ```bash
-npm install nhl-stats-client
+npm install nhl-api-client
 ```
 
 ## Quick Start
 
 ```typescript
-import { NHLClient } from 'nhl-stats-client';
+import { NHLClient } from 'nhl-api-client';
 
 const nhl = new NHLClient();
 
@@ -359,7 +359,7 @@ The Stats API uses [Apache Cayenne expressions](https://cayenne.apache.org/docs/
 #### CayenneExpBuilder Usage
 
 ```typescript
-import { CayenneExpBuilder, GameType } from 'nhl-stats-client';
+import { CayenneExpBuilder, GameType } from 'nhl-api-client';
 
 // Regular season forwards in 2024-25
 const exp = new CayenneExpBuilder()
@@ -408,7 +408,7 @@ const config = await nhl.stats.misc.getConfig();
 ### Error Handling
 
 ```typescript
-import { NHLApiError, NHLNotFoundError, NHLRateLimitError } from 'nhl-stats-client';
+import { NHLApiError, NHLNotFoundError, NHLRateLimitError } from 'nhl-api-client';
 
 try {
   const player = await nhl.players.getLanding(99999999);
@@ -440,7 +440,7 @@ import type {
   TeamRoster,
   StatsApiResponse,
   StatsSkater,
-} from 'nhl-stats-client';
+} from 'nhl-api-client';
 ```
 
 ---

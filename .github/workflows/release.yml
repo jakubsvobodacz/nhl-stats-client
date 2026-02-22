@@ -12,7 +12,7 @@ jobs:
       id-token: write
     environment:
       name: npm
-      url: https://www.npmjs.com/package/nhl-stats-client
+      url: https://www.npmjs.com/package/nhl-api-client
 
     steps:
       - uses: actions/checkout@v4
